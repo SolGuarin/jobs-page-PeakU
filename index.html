@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app"></div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    jobsList: [
+                    {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+
+                    }, {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }, {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }, {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }
+                    , {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }, {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }, {
+                        urlImagen: "https://via.placeholder.com/150x150",
+                        position: "Ingeniero de datos",
+                        company: "Dathic",
+                        salary: "$ 2K - 3K USD",
+                        modality: "Remoto",
+                        location: "Bogotá"
+                    }
+                ]
+                };
+            },
+            template: `
+            <div class="container" :class="styles">
+                    <div class="list">
+                        <div v-for="(item, i) in jobsList" :key="i" class="item">
+                            <div class="img">
+                                <img v-bind:src="urlImagen">
+                            </div>
+
+                            <div>
+                            <div class="title">
+                                {{ item.position }} 
+                            </div>
+                                <p>{{ item.company }}</p>
+                            </div> 
+
+                            <div class="salary">
+                                <p>{{ item.salary}}</p>
+                            </div>
+
+                            <div class="modality">
+                                <p>{{ item.modality}}</p>
+                            </div>
+
+                            <div class="location">
+                                <p> 📍 {{ item.location}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+            </div>
+            `
+        }).mount("#app");
+    </script>
+    <style>
+        html, body {
+            height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #app, .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(229, 236, 243);
+        }
+        button {
+            margin-top: 24px;
+            border: none;
+            background-color: white;
+            padding: 8px 24px;
+            border-radius: 12px;
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+        }
+        .item {
+            display: flex;
+            border: 1px solid gray;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            width: 90vw;
+            justify-content: space-evenly;  
+            background-color: white;
+        }
+        .item:hover{
+            transform: scale(1.03);
+        }
+        .title {
+            font-weight: bold;
+            font-size: 1.2rem;     
+        }
+        img{
+            width: 5rem;
+            height: 5rem;
+        }
+    </style>
+</body>
+</html>
