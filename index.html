@@ -15,56 +15,70 @@
                 return {
                     jobsList: [
                     {
-                        urlImagen: "https://via.placeholder.com/150x150",
+                        urlImagen: "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/tj83mf3vy9tv94p77r8l",
                         position: "Ingeniero de datos",
                         company: "Dathic",
                         salary: "$ 2K - 3K USD",
                         modality: "Remoto",
                         location: "Bogotá"
 
-                    }, {
-                        urlImagen: "https://via.placeholder.com/150x150",
-                        position: "Ingeniero de datos",
-                        company: "Dathic",
+                    },{
+                        urlImagen: "https://www.camaradelpacifico.org/tl_files/Casos%20Exito/CEIBA%20SOFTWARE/logo%20ceiba.jpg",
+                        position: "Desarrollador Java",
+                        company: "Ceiba",
                         salary: "$ 2K - 3K USD",
+                        modality: "Presencial",
+                        location: "Medellín"
+                    }, {
+                        urlImagen: "https://statics.globant.com/production/public/2022-08/globant-logo.jpg",
+                        position: "Desarrollador Fullstack",
+                        company: "Globant",
+                        salary: "$ 4M - 6M - COP",
                         modality: "Remoto",
+                        location: "Medellín"
+                    }, {
+                        urlImagen: "https://upload.wikimedia.org/wikipedia/commons/3/32/Platzi.jpg",
+                        position: "Estrategia digital   ",
+                        company: "Platzi",
+                        salary: "$ 1K - 2K USD",
+                        modality: "Presencial",
                         location: "Bogotá"
                     }, {
-                        urlImagen: "https://via.placeholder.com/150x150",
-                        position: "Ingeniero de datos",
-                        company: "Dathic",
-                        salary: "$ 2K - 3K USD",
-                        modality: "Remoto",
-                        location: "Bogotá"
-                    }, {
-                        urlImagen: "https://via.placeholder.com/150x150",
-                        position: "Ingeniero de datos",
-                        company: "Dathic",
-                        salary: "$ 2K - 3K USD",
+                        urlImagen: "https://1000marcas.net/wp-content/uploads/2019/12/Microsoft-Logo.png",
+                        position: "Desarrollador Backend",
+                        company: "Microsoft",
+                        salary: "$ 3K - 4K USD",
                         modality: "Remoto",
                         location: "Bogotá"
                     }
                     , {
-                        urlImagen: "https://via.placeholder.com/150x150",
-                        position: "Ingeniero de datos",
-                        company: "Dathic",
-                        salary: "$ 2K - 3K USD",
+                        urlImagen: "https://media.licdn.com/dms/image/C560BAQFygZ-XOA7JqQ/company-logo_200_200/0/1602869553806?e=2147483647&v=beta&t=QiV8OwO71nVPvPbZt5JGjaU4Q-N2LsNsy8yTxy6zu-k",
+                        position: "Desarrollador Python",
+                        company: "PeakU",
+                        salary: "5M - 6M COP",
                         modality: "Remoto",
                         location: "Bogotá"
                     }, {
-                        urlImagen: "https://via.placeholder.com/150x150",
-                        position: "Ingeniero de datos",
-                        company: "Dathic",
-                        salary: "$ 2K - 3K USD",
+                        urlImagen: "https://statics.globant.com/production/public/2022-08/globant-logo.jpg",
+                        position: "Desarrollador Frontend",
+                        company: "Globant",
+                        salary: "$ 6M - 8M - COP",
                         modality: "Remoto",
-                        location: "Bogotá"
+                        location: "MedellIín"
                     }, {
-                        urlImagen: "https://via.placeholder.com/150x150",
+                        urlImagen: "https://www.camaradelpacifico.org/tl_files/Casos%20Exito/CEIBA%20SOFTWARE/logo%20ceiba.jpg",
                         position: "Ingeniero de datos",
-                        company: "Dathic",
+                        company: "Ceiba",
                         salary: "$ 2K - 3K USD",
+                        modality: "Presencial",
+                        location: "Medellín"
+                    }, {
+                        urlImagen: "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600914900/origin/bio/organizations/Tech_and_Solve_poe5yh.jpg",
+                        position: "Desarrollador de operaciones",
+                        company: "Tech and Solve",
+                        salary: "$ 1100 USD",
                         modality: "Remoto",
-                        location: "Bogotá"
+                        location: "Rionegro"
                     }
                 ]
                 };
@@ -73,11 +87,11 @@
             <div class="container" :class="styles">
                     <div class="list">
                         <div v-for="(item, i) in jobsList" :key="i" class="item">
-                            <div class="img">
-                                <img v-bind:src="urlImagen">
+                            <div class="image">
+                                <img v-bind:src="item.urlImagen">
                             </div>
 
-                            <div>
+                            <div class="position">
                             <div class="title">
                                 {{ item.position }} 
                             </div>
@@ -104,7 +118,7 @@
     </script>
     <style>
         html, body {
-            height: 100vh;
+            
             margin: 0;
             font-family: 'Times New Roman', Times, serif;
         }
@@ -136,6 +150,7 @@
             width: 90vw;
             justify-content: space-evenly;  
             background-color: white;
+            box-shadow: 2px 2px 2px 1px gray; 
         }
         .item:hover{
             transform: scale(1.03);
@@ -145,8 +160,19 @@
             font-size: 1.2rem;     
         }
         img{
-            width: 5rem;
+            width: 7rem;
             height: 5rem;
+        }
+        .position{
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+            
+        }
+        .position, .salary, .modality, .location{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </body>
